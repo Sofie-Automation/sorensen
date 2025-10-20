@@ -123,18 +123,6 @@ jobs:
           retention-days: 1
           if-no-files-found: error
 
-      - name: Generate docs
-        if: ${{ steps.do-publish.outputs.tag == 'latest' }}
-        run: |
-          yarn docs:html
-      - name: Publish docs
-        uses: peaceiris/actions-gh-pages@v4
-        if: ${{ steps.do-publish.outputs.tag == 'latest' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          exclude_assets: '.github,.vscode,node_modules,src,test,.npmrc,.yarnrc'
-          publish_dir: ./
-
   publish:
     name: Publish to NPM
     needs:
