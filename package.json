@@ -12,12 +12,12 @@
   "author": "Jan Starzak <jan.starzak@nrk.no>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nrkno/sorensen.git"
+    "url": "git+https://github.com/Sofie-Automation/sorensen.git"
   },
   "bugs": {
-    "url": "https://github.com/nrkno/sorensen/issues"
+    "url": "https://github.com/Sofie-Automation/sorensen/issues"
   },
-  "homepage": "https://nrkno.github.io/sorensen/",
+  "homepage": "https://Sofie-Automation.github.io/sorensen/",
   "license": "MIT",
   "keywords": [
     "keyboard",
