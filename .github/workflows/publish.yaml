@@ -22,8 +22,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 18.x
 
@@ -31,6 +33,10 @@ jobs:
         run: |
           corepack enable
           yarn
+
+      - name: Disable AppArmor
+        # https://github.com/puppeteer/puppeteer/pull/13196
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
 
       - name: Test in Chromium
         run: |
