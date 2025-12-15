@@ -150,7 +150,7 @@ jobs:
           node-version: 24.x
 
       - name: Download release artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v7
         with:
           name: publish-dist
 
