@@ -679,8 +679,8 @@ async function init(options?: { chordTimeout?: number }) {
  */
 async function destroy() {
 	if (initialized) {
-		window.removeEventListener('keyup', keyUp)
-		window.removeEventListener('keydown', keyDown)
+		window.removeEventListener('keyup', keyUp, { capture: true })
+		window.removeEventListener('keydown', keyDown, { capture: true })
 		window.removeEventListener('visibilitychange', visibilityChange)
 		window.removeEventListener('blur', windowBlur)
 		window.removeEventListener('pagehide', windowBlur)
